@@ -1,4 +1,4 @@
-
+// функция для получения URL фотографии города
 char *get_city_photo_url(const char *city_name) {
     // формирование URL запроса к API OpenWeatherMap
     char url[256];
