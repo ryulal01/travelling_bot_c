@@ -28,7 +28,7 @@ int main() {
         return -1;
     }
 
-  telebot_user_t me;
+    telebot_user_t me;
     if (telebot_get_me(handle, &me) != TELEBOT_ERROR_NONE)
     {
         printf("Failed to get bot information\n");
@@ -60,7 +60,6 @@ int main() {
             telebot_update_t *update = updates[i];
             if (update->message != NULL && update->message->text != NULL) {
                 char *text = update->message->text;
-                // если сообщение содержит название города, отправляем фотографию
                 if (strlen(text) > 2) {
                     send_city_photo(handle, update->message->chat->id, text);
                 }
